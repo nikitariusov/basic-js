@@ -192,7 +192,7 @@ describe('What season', () => {
             const res = checkForThrowingErrors.call(this, [
                 () => getSeason('foo'),
                 () => getSeason({ John: 'Smith' }),
-                () => getSeason(20192701),
+                () => getSeason(new Error('Invalid date!')),
                 () => getSeason([2019, '27', 0 + '1']),
                 () => getSeason(() => new Date())
             ], 'Invalid date!');
